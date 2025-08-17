@@ -1,85 +1,52 @@
 body {
-    background-color: wheat;
-    margin: 0;
-    padding: 0;
+  background-color: wheat;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
 
+/* === Navbar === */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: transparent; /* transparan biar konten di bawahnya kelihatan */
+  background: white;   /* flat tanpa shadow */
   z-index: 1000;
 }
 
-/* Pastikan hamburger + brand di kiri */
 .navbar .navbar-brand {
-    margin-left: 0;
+  margin-left: 0;
 }
 
-  /* Menu selalu di kanan */
 .navbar-nav {
-    margin-left: auto;
+  margin-left: auto;
 }
 
-  /* Sedikit jarak antara hamburger dan brand */
 .navbar-toggler {
-    margin-right: 8px;
-}
-
-  /* Tampilkan hamburger di desktop */
-.navbar-toggler {
-    display: block;
+  margin-right: 8px;
+  display: block;
 }
 
 @media (min-width: 992px) {
-    .navbar-collapse {
-      display: none !important; /* Default tertutup di desktop */
-    }
-    .navbar-collapse.show {
-      display: block !important; /* Muncul kalau dibuka */
-    }
+  .navbar-collapse {
+    display: none !important;
+  }
+  .navbar-collapse.show {
+    display: block !important;
+  }
 }
 
-/* Offcanvas transparan + blur */
-.offcanvas {
-    width: 250px;
-    background-color: rgba(255, 255, 255, 0.8) !important; /* Putih transparan */
-    backdrop-filter: blur(8px);
-    
-    /* Animasi awal */
-    transform: translateX(-100%);
-    opacity: 0;
-    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
-}
-
-  /* Saat menu muncul */
-.offcanvas.show {
-    transform: translateX(0);
-    opacity: 1;
-}
-
-  /* Warna teks tetap jelas */
-.offcanvas .nav-link {
-    color: #000 !important;
-}
-
-  /* Jarak hamburger & brand */
-.navbar-toggler {
-    margin-right: 8px;
-}
-
-/* search */
+/* === Search === */
 .navbar .search-container {
   position: relative;
-  margin-left: auto; /* dorong ke kanan di dalam navbar */
+  margin-left: auto;
   margin-right: 30px;
 }
 
 .search-icon {
-  border: none !important;
-  background: transparent !important;
+  border: none;
+  background: transparent;
   padding: 0;
   font-size: 1.2rem;
   color: #000;
@@ -92,7 +59,7 @@ body {
 
 .search-input {
   position: absolute;
-  right: 0; /* sekarang ini benar-benar di ujung kanan navbar */
+  right: 0;
   top: 50%;
   transform: translateY(-50%) scaleX(0);
   transform-origin: right;
@@ -116,6 +83,7 @@ body {
   pointer-events: auto;
 }
 
+/* === Login Icon === */
 .login-icon {
   font-size: 1.4rem;
   color: #000;
@@ -125,25 +93,25 @@ body {
   color: #28a745;
 }
 
-/* Container full lebar dan jarak dari navbar */
+/* === Container utama === */
 .container-home {
   width: 100%;
   text-align: center;
   background-color: white;
   margin: 0;
-  padding-top: 0; /* jarak dari navbar */
-  font-family: Arial, sans-serif;
+  padding-top: 0;
 }
 
-/* Logo atas */
+/* === Logo === */
 .logo {
   font-size: 3rem;
   font-style: italic;
-  color: #a3c8e4; /* biru muda */
+  color: #a3c8e4;
   letter-spacing: 2px;
   margin-bottom: 40px;
 }
 
+/* === Album Cover === */
 .album-cover {
   width: 518px;
   height: 518px;
@@ -154,12 +122,12 @@ body {
 .album-cover-dua {
   max-width: 100%;
   height: auto;
-  display: block;   /* Biar diatur satu baris sendiri */
-  margin: 20px auto 0; /* Jarak atas 20px, tengah otomatis */
-  clear: both;      /* Pastikan turun di bawah tombol */
-  margin-bottom: 30px;
+  display: block;
+  margin: 20px auto 30px;
+  clear: both;
 }
 
+/* === Teks & Tombol === */
 .song-title {
   font-style: italic;
   font-size: 0.9rem;
@@ -167,23 +135,7 @@ body {
   color: #000;
 }
 
-.btn-listen {
-  display: inline-block;
-  background-color: #a3c8e4;
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 3px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  transition: background 0.3s ease;
-  margin-top: 30px;
-}
-
-.btn-listen:hover {
-  background-color: #8bb6d4;
-}
-
+.btn-listen,
 .btn-stream {
   display: inline-block;
   background-color: #a3c8e4;
@@ -195,8 +147,177 @@ body {
   letter-spacing: 1px;
   transition: background 0.3s ease;
   margin-top: 30px;
+  margin-bottom: 30px;
 }
 
+.btn-listen:hover,
 .btn-stream:hover {
   background-color: #8bb6d4;
+}
+
+/* === Youtube Responsive Embed === */
+.youtube-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;   /* batas maksimal */
+  margin: 50px auto 30px;
+  aspect-ratio: 16 / 9;
+}
+.youtube-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  display: block;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+@media (max-width: 480px) {
+  .youtube-wrapper {
+    aspect-ratio: 4 / 3; /* hp kecil lebih tinggi */
+  }
+}
+
+/* === Grid Produk === */
+.grid-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+  margin-top: 90px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.product-item img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.product-info {
+  margin-top: 10px;
+}
+
+.product-info .title {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.product-info .price {
+  font-style: italic;
+  color: #000;
+  margin-top: 4px;
+}
+
+/* === Responsive Breakpoints === */
+@media (max-width: 992px) {
+  .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 576px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* TOUR SCHEDULE */
+/* === Container Full Width === */
+.tour-container {
+  width: 100%;
+  padding: 60px 0;   /* jarak atas bawah */
+}
+
+/* === Judul Section === */
+.tour-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* === Setiap item tour === */
+.tour-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  border-bottom: 1px solid #ddd; /* garis pemisah */
+  position: relative;
+}
+
+/* kiri */
+.tour-left {
+  flex: 1;
+  text-align: left;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* tengah fix benar-benar center */
+.tour-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* kanan */
+.tour-right {
+  flex: 1;
+  text-align: right;
+}
+
+/* tombol tiket */
+.btn-ticket {
+  background-color: #e50914;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+.btn-ticket:hover {
+  background-color: #b0060f;
+}
+
+/* === Responsive untuk layar kecil === */
+@media (max-width: 768px) {
+  .tour-item {
+    display: block;
+    text-align: center;
+    padding: 20px 10px;
+  }
+
+  .tour-left {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .tour-center {
+    position: relative;
+    left: auto;
+    transform: none;
+    margin-bottom: 10px;
+  }
+
+  .tour-right {
+    text-align: center;
+  }
 }
