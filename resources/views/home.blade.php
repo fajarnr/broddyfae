@@ -1,88 +1,20 @@
 @extends('layout.main')
 
 @section('container')
-<div class="container-home px-0">
-    <div class="logo">BRODDYFAE</div>
+<div class="container-home">
+  <div class="gallery-wrapper">
+    <div class="gallery">
+      <div class="gallery-item"><img src="https://placebear.com/670/524" alt="bear"></div>
+      <div class="gallery-item"><img src="https://placebear.com/670/524" alt="bear"></div>
+      <div class="gallery-item"><img src="https://placebear.com/670/524" alt="bear"></div>
+      <div class="gallery-item"><img src="https://placebear.com/670/524" alt="bear"></div>
+      <div class="gallery-item"><img src="https://placebear.com/670/524" alt="bear"></div>
+      <div class="gallery-item"><img src="https://placebear.com/670/524" alt="bear"></div>
+      <div class="gallery-item"><img src="https://placebear.com/670/524" alt="bear"></div>
+    </div>    
+  </div>
 
-    <img src="https://placebear.com/518/518" alt="Album Cover" class="album-cover">
-
-    <div class="song-title">NEVER ENOUGH</div>
-
-    <a href="#" class="btn-listen">LISTEN NOW</a>
-
-    <img src="https://placebear.com/878/1300" alt="Album Cover dua" class="album-cover-dua">
-
-    <a href="#" class="btn-stream">STREAM NOW</a>
-
-    <div class="youtube-wrapper">
-        <iframe class="youtube-cover" src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&" frameborder="0" 
-        allowfullscreen>
-        </iframe>
-    </div>
-
-    <div class="grid-container">
-        <div class="product-grid">
-            <!-- Item 1 -->
-            <div class="product-item">
-              <img src="https://placebear.com/300/300" alt="Product 1">
-              <div class="product-info">
-                <p class="title">TURNSTILE "NEVER ENOUGH" LP ORANGE CLAY</p>
-                <p class="price">$30.00 USD</p>
-              </div>
-            </div>
-          
-            <!-- Item 2 -->
-            <div class="product-item">
-              <img src="https://placebear.com/300/300" alt="Product 2">
-              <div class="product-info">
-                <p class="title">TURNSTILE "NEVER ENOUGH" CD</p>
-                <p class="price">$15.00 USD</p>
-              </div>
-            </div>
-          
-            <!-- Item 3 -->
-            <div class="product-item">
-              <img src="https://placebear.com/300/300" alt="Product 3">
-              <div class="product-info">
-                <p class="title">TURNSTILE "NEVER ENOUGH" CASSETTE</p>
-                <p class="price">$15.00 USD</p>
-              </div>
-            </div>
-
-            <!-- Item 1 -->
-            <div class="product-item">
-                <img src="https://placebear.com/300/300" alt="Product 1">
-                <div class="product-info">
-                  <p class="title">TURNSTILE "NEVER ENOUGH" LP ORANGE CLAY</p>
-                  <p class="price">$30.00 USD</p>
-                </div>
-              </div>
-            
-              <!-- Item 2 -->
-              <div class="product-item">
-                <img src="https://placebear.com/300/300" alt="Product 2">
-                <div class="product-info">
-                  <p class="title">TURNSTILE "NEVER ENOUGH" CD</p>
-                  <p class="price">$15.00 USD</p>
-                </div>
-              </div>
-            
-              <!-- Item 3 -->
-              <div class="product-item">
-                <img src="https://placebear.com/300/300" alt="Product 3">
-                <div class="product-info">
-                  <p class="title">TURNSTILE "NEVER ENOUGH" CASSETTE</p>
-                  <p class="price">$15.00 USD</p>
-                </div>
-              </div>
-          
-            <!-- Tambah produk lainnya... -->
-        </div>
-    </div> 
-
-    <a href="#" class="btn-stream">view all</a>
-
-    <div class="tour-container">
+    {{-- <div class="tour-container">
 
         <div class="tour-item">
           <div class="tour-left">
@@ -132,7 +64,7 @@
           </div>
         </div>
       
-    </div>
+    </div> --}}
       
       
       
