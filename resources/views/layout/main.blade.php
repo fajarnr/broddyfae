@@ -22,7 +22,8 @@
     @include('partial.footer')
 
 
-      <script src="js/script.js"></script>
+    <script src="js/script.js"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

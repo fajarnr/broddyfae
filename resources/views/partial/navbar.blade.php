@@ -1,33 +1,39 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light custom-navbar">
-  <div class="container-fluid d-flex justify-content-between align-items-center px-0">
+<nav class="custom-navbar">
+    <!-- Left -->
+    <div class="nav-left">
+        <a href="#">NEWS</a>
+        <a href="#">SHOP</a>
+        <a href="#">RUNWAY</a>
+        <a href="#">STORES</a>
 
-    <!-- Tombol garis 3 -->
-    <button class="menu-toggle d-lg-none" type="button">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+        <!-- tombol muncul saat responsive -->
+        <button class="nav-toggle" onclick="toggleMenu()">MENU</button>
+    </div>
 
     <!-- Logo -->
-    <div class="nav-center">
-      <a href="#" class="brand">BRODDYFAE<sup>®</sup></a>
+    <div class="nav-logo">
+        <a href="#">BRODDYFAE<sup>®</sup></a>
     </div>
 
-    <!-- Menu Kiri -->
-    <div class="nav-left">
-      <a href="#">NEWS</a>
-      <a href="#">SHOP</a>
-      <a href="#">RUNWAY</a>
-      <a href="#">STORES</a>
-    </div>
-
-    <!-- Menu Kanan -->
+    <!-- Right -->
     <div class="nav-right">
-      <a href="#">ABOUT</a>
-      <a href="#">CONTACT</a>
-      <a href="#">TERMS</a>
-      <a href="#">CART</a>
-    </div>
+        <a href="#">ABOUT</a>
+        <a href="#">CONTACT</a>
+        <a href="#">TERMS</a>
+        <a href="#">CART</a>
 
-  </div>
+        <!-- cart muncul saat responsive -->
+        <a href="#" class="cart-mobile">CART</a>
+    </div>
 </nav>
+
+<!-- Dropdown menu -->
+<div class="nav-menu" id="navMenu">
+    <a href="#">NEWS</a>
+    <a href="#">SHOP</a>
+    <a href="#">RUNWAY</a>
+    <a href="#">STORES</a>
+    <a href="#">ABOUT</a>
+    <a href="#">CONTACT</a>
+    <a href="#">TERMS</a>
+</div>
