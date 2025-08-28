@@ -1,10 +1,9 @@
 <nav class="custom-navbar">
     <!-- Left -->
     <div class="nav-left">
-        <a href="#">NEWS</a>
-        <a href="#">SHOP</a>
-        <a href="#">RUNWAY</a>
-        <a href="#">STORES</a>
+        <a href="/info">INFO</a>
+        <a href="#">MUSIC</a>
+        <a href="#">FILM</a>
 
         <!-- tombol muncul saat responsive -->
         <button class="nav-toggle" onclick="toggleMenu()">MENU</button>
@@ -12,28 +11,26 @@
 
     <!-- Logo -->
     <div class="nav-logo">
-        <a href="#">BRODDYFAE<sup>®</sup></a>
+        <a href="/">BRODDYFAE<sup>®</sup></a>
     </div>
 
     <!-- Right -->
     <div class="nav-right">
-        <a href="#">ABOUT</a>
-        <a href="#">CONTACT</a>
-        <a href="#">TERMS</a>
-        <a href="#">CART</a>
+        <a href="#">MERCH</a>
+        <a href="#">COLLAB</a>
+        <a href="#">SHOW</a>
 
         <!-- cart muncul saat responsive -->
-        <a href="#" class="cart-mobile">CART</a>
+        <a href="#" class="cart-mobile">SHOW</a>
     </div>
 </nav>
 
 <!-- Dropdown menu -->
 <div class="nav-menu" id="navMenu">
-    <a href="#">NEWS</a>
-    <a href="#">SHOP</a>
-    <a href="#">RUNWAY</a>
-    <a href="#">STORES</a>
-    <a href="#">ABOUT</a>
-    <a href="#">CONTACT</a>
-    <a href="#">TERMS</a>
+    <a href="/info">INFO</a>
+    <a href="#">MUSIC</a>
+    <a href="#">FILM</a>
+    <a href="#">MERCH</a>
+    <a href="#">COLLAB</a>
+    <a href="#">SHOW</a>
 </div>
