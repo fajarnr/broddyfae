@@ -847,29 +847,42 @@ body, html {
 
 @media (max-width: 768px) {
   .container-3-film {
-    flex-direction: column; /* stack vertikal */
+    flex-direction: column;
     height: auto;
   }
 
   .section-left-film,
   .section-right-film {
-    display: none; /* hilang di HP */
+    display: none;
   }
 
   .section-center-film {
     flex: 1;
     width: 100%;
-    padding: 15px;
+    padding: 0; /* reset padding biar full */
   }
 
   .scroll-content-film {
     max-width: 100%;
+    padding: 0; /* hilangkan padding dalem */
+  }
+
+  /* === Video & Info full layar === */
+  .video-embed,
+  .video-info {
+    width: 100vw;     /* full layar */
+    margin: 0;        /* reset margin */
+    padding: 0 0;     /* gak ada padding */
+    box-sizing: border-box;
   }
 
   .video-embed {
-    width: 100%;
     height: auto;
     aspect-ratio: 16 / 9;
-    margin-top: 5px;
+  }
+
+  .video-info {
+    font-size: 14px;
+    padding: 10px 15px; /* tambahin sedikit padding kiri kanan biar teks gak nempel */
   }
 }
