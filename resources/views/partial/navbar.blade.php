@@ -2,8 +2,8 @@
     <!-- Left -->
     <div class="nav-left">
         <a href="/info">INFO</a>
-        <a href="#">MUSIC</a>
-        <a href="#">FILM</a>
+        <a href="/musik">MUSIC</a>
+        <a href="/film">FILM</a>
 
         <!-- tombol muncul saat responsive -->
         <button class="nav-toggle" onclick="toggleMenu()">MENU</button>
@@ -16,21 +16,21 @@
 
     <!-- Right -->
     <div class="nav-right">
-        <a href="#">MERCH</a>
+        <a href="/merch">MERCH</a>
         <a href="#">COLLAB</a>
-        <a href="#">SHOW</a>
+        <a href="/show">SHOW</a>
 
         <!-- cart muncul saat responsive -->
-        <a href="#" class="cart-mobile">SHOW</a>
+        <a href="/show" class="cart-mobile">SHOW</a>
     </div>
 </nav>
 
 <!-- Dropdown menu -->
 <div class="nav-menu" id="navMenu">
     <a href="/info">INFO</a>
-    <a href="#">MUSIC</a>
-    <a href="#">FILM</a>
-    <a href="#">MERCH</a>
+    <a href="/musik">MUSIC</a>
+    <a href="/film">FILM</a>
+    <a href="/merch">MERCH</a>
     <a href="#">COLLAB</a>
-    <a href="#">SHOW</a>
+    <a href="/show">SHOW</a>
 </div>

@@ -10,14 +10,14 @@
           <a href="#">小红书</a>
         </div>
   
-        <!-- Kanan -->
+        {{-- <!-- Kanan -->
         <div class="footer-right">
           <form class="newsletter-form">
             <label for="email">NEWSLETTER</label>
             <input type="email" id="email" placeholder="Email">
             <button type="submit">SUBSCRIBE</button>
           </form>
-        </div>
+        </div> --}}
   
       </div>
     </div>

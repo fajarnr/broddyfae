@@ -10,8 +10,10 @@
         <div class="scroll-content">
             <!-- Menu atas -->
             <div class="top-menu">
-                <a href="#bio" class="active">Biography</a> /
-                <a href="#contact">Contact</a>
+                <div class="section-title">
+                    <a href="#bio" class="active">Biography</a> /
+                    <a href="#contact">Contact</a>
+                </div>
             </div>
             
             <div class="image-center">

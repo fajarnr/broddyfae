@@ -3,8 +3,8 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  height: auto;
-  overflow: hidden;
+  min-height: 100%;   /* cukup min-height */
+  overflow-x: hidden; /* biar tidak ada scroll horizontal */
 }
 
 /* navbar */
@@ -19,7 +19,7 @@ body, html {
   letter-spacing: 1px;
   background-color: white;
   position: relative;
-  margin-top: 10px;
+  margin-top: 15px;
   margin-left: 30px;
   margin-right: 30px;
 }
@@ -149,8 +149,6 @@ body, html {
   }
 }
 
-
-
 /* kontainer home */
 .container-home {
   margin: 0 auto;      
@@ -184,7 +182,7 @@ body, html {
 
 .gallery-item {
   flex: 0 0 calc(100% / 2.75);   /* 2 ¾ foto per layar */
-  height: 86vh;
+  height: 87vh;
   overflow: hidden;
   scroll-snap-align: start;    
 }
@@ -379,14 +377,16 @@ body, html {
   }
 }
 
-
 /* footer */
 .footer {
+  bottom: 10px;
+  left: 0;
+  width: 100%;
   background: #fff;
-  border-top: 0px solid #eee;
+  border-top: 1px solid #eee;
   font-size: 10px;
-  padding: 5px 0;   /* tipis atas bawah */
-  width: 100%;      /* full kanan kiri */
+  padding: 5px 0;
+  z-index: 100;   /* biar di atas elemen lain */
 }
 
 .footer-content {
@@ -441,6 +441,7 @@ body, html {
     text-align: center;         /* teks & link rata tengah */
     padding: 10px 15px;
     gap: 15px;                  /* jarak antar bagian */
+    margin-top: auto;
   }
 
   .footer-left {
@@ -477,6 +478,42 @@ body, html {
 
 
 /* TOUR SCHEDULE */
+/* kontainer show */
+.container-show {
+  width: 100%;             /* penuh lebar layar */
+  margin: 0 auto;          
+  padding: 40px 20px;      /* jarak dalam: atas-bawah 40px, kiri-kanan 20px */
+  box-sizing: border-box;
+  display: flex;           
+  flex-direction: column;  
+  justify-content: flex-start; /* biar isi mulai dari atas, bukan tengah */
+  min-height: calc(92vh - 60px); /* isi minimal tinggi layar - footer */
+}
+
+.top-menu-show {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  z-index: 10;
+  border-bottom: 0px solid #eee;
+}
+.top-menu-show a {
+  color: #000;
+  text-decoration: none;
+  margin: 0 5px;
+  transition: color 0.3s ease;
+}
+.top-menu-show a.active {
+  font-weight: 700;
+  color: #4caf50; /* warna aktif */
+  border-bottom: 2px solid #4caf50;
+  padding-bottom: 3px;
+}
+
 /* === Container Full Width === */
 .tour-container {
   width: 100%;
@@ -543,10 +580,16 @@ body, html {
 
 /* === Responsive untuk layar kecil === */
 @media (max-width: 768px) {
+  .container-show{
+    margin-top: 5px;      /* lebih mepet ke atas */
+    padding-top: 10px;    /* opsional, biar isi tidak terlalu nempel */
+  }
+  
   .tour-item {
     display: block;
     text-align: center;
     padding: 20px 10px;
+    padding-top: 3px;
   }
 
   .tour-left {
@@ -563,5 +606,270 @@ body, html {
 
   .tour-right {
     text-align: center;
+  }
+}
+
+/* MERCH */
+/* ===== PRODUCT CONTAINER ===== */
+.product-container {
+ display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 40px;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ===== PRODUCT ITEM ===== */
+.product-item {
+  text-align: center;
+  position: relative;
+  background: #fff;
+  padding: 0 20px 20px 20px;   /* kanan kiri ada ruang 20px */
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.product-item:hover {
+  transform: translateY(-5px);
+}
+
+/* ===== IMAGE MENIPIS ===== */
+.product-item img {
+  width: 100%;                /* penuh dalam area padding */
+  max-width: 380px;           /* opsional: biar nggak terlalu lebar */
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 15px;        /* center horizontal */
+}
+
+/* ===== INFO ===== */
+.product-info {
+  padding: 0 10px;
+}
+
+.product-info h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.price {
+  font-size: 15px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .product-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 30px 20px;
+  }
+
+  .product-item img {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px 15px;
+  }
+
+  .product-item img {
+    max-width: 250px;
+  }
+}
+
+/* MUSIK */
+/* Container */
+.releases-container {
+  width: 100%;
+  padding: 40px 20px;
+  color: #000000;
+  box-sizing: border-box;
+}
+
+/* Judul Section */
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+/* Grid */
+.releases-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* fix 3 kolom desktop */
+  gap: 40px;
+  justify-items: center; /* item selalu di tengah kalau lebih kecil */
+}
+
+/* Item */
+.release-item {
+  text-align: center;
+  width: 100%;
+  max-width: 420px;  /* biar kotak nggak terlalu besar */
+}
+
+.release-item img {
+  width: 100%;
+  aspect-ratio: 1 / 1;   /* kotak */
+  object-fit: cover;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.release-item p {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .releases-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* Tablet: 2 */
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .releases-grid {
+    grid-template-columns: 1fr; /* HP: 1 */
+    gap: 20px;
+  }
+}
+
+/* FILM */
+/* ====== LAYOUT 3 BAGIAN ====== */
+.container-3-film {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 85vh; /* penuh layar */
+  overflow: hidden; /* hilangkan scroll body */
+}
+
+/* Kolom kiri */
+.section-left-film {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Kolom tengah */
+.section-center-film {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  overflow: hidden;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Kolom kanan */
+.section-right-film {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ====== SCROLL AREA ====== */
+.scroll-content-film {
+  flex: 1;
+  overflow-y: auto;
+  width: 100%;
+  max-width: 945px; /* ikut ukuran video */
+  padding-right: 10px;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.scroll-content-film::-webkit-scrollbar {
+  display: none;
+}
+
+/* Video Embed */
+.video-embed {
+  position: relative;
+  width: 945px;
+  height: 532px;
+  margin: 50px auto 10px auto;  /* atas 50px, bawah 10px */
+  background: #000;
+}
+
+.video-embed iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Info bawah */
+.video-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: #000000;
+  font-size: 14px;
+  margin-top: 5px;      /* rapat ke video */
+  margin-bottom: 30px;  /* jarak ke konten berikutnya */
+}
+
+.video-info .title {
+  padding-top: 0;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 1024px) {
+  .video-embed {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9; /* responsif di tablet */
+  }
+
+  .video-info {
+    max-width: 100%;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-3-film {
+    flex-direction: column; /* stack vertikal */
+    height: auto;
+  }
+
+  .section-left-film,
+  .section-right-film {
+    display: none; /* hilang di HP */
+  }
+
+  .section-center-film {
+    flex: 1;
+    width: 100%;
+    padding: 15px;
+  }
+
+  .scroll-content-film {
+    max-width: 100%;
+  }
+
+  .video-embed {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    margin-top: 5px;
   }
 }

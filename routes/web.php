@@ -6,14 +6,26 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/music', function () {
-    return view('music');
+Route::get('/info', function () {
+    return view('info');
 });
 
-Route::get('/store', function () {
-    return view('store');
+Route::get('/show', function () {
+    return view('show');
 });
 
 Route::get('/tour', function () {
     return view('tour');
+});
+
+Route::get('/musik', function () {
+    return view('musik');
+});
+
+Route::get('/merch', function () {
+    return view('merch');
+});
+
+Route::get('/film', function () {
+    return view('film');
 });
